@@ -24,16 +24,16 @@ void listpopback(npointer head);
 void listpopfront(npointer head);
 
 //在定结点处插入，插入到结点后
-void listinsert(npointer node,int data);
+void listinsert(npointer head, npointer node, int data);
 
 //定结点删除
-void listerase(npointer node);
+void listerase(npointer head,npointer node);
 
 //按值删除
-void listremove(npointer head,int num);
+void listremove(npointer head,int data,int num);
 
-//按值查找
-//npointer listfind(npointer head,int data);
+//按值查找 只返还符合该值的第一个结点的位置
+npointer listfind(npointer head,int data);
 
 //按顺序打印链表
 void listprint(npointer head);

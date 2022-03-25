@@ -3,12 +3,15 @@
 using namespace std;
 int main()
 {
-	npointer head = initlist();
-	listpushback(head);
-	listprint(head);
-	listpushfront(head);
-	listprint(head);
-	listpopfront(head);
-	listprint(head);
+	npointer head1 = initlist();
+	listpushback(head1);
+	listpushback(head1);
+	listpushback(head1);
+	npointer head2 = initlist();
+	listpushback(head2);
+	listpushback(head2);
+	listpushback(head2);
+	listcombine(head1,head2);
+	listprint(head1);
 	return 0;
 }

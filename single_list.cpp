@@ -93,28 +93,109 @@ void listpopfront(npointer head)
 }
 
 //在定结点处插入，插入到结点后
-void listinsert(npointer node, int data)
+void listinsert(npointer head,npointer node, int data)
 {
-
+	npointer temp;
+	npointer temp2;
+	temp = head;
+	//临时指针temp遍历指向输入结点，循环直到走到最后一个结点或者找到输入结点为止
+	for (int i = 0; i <= head->data&&temp!=node; i++)
+	{
+		temp = temp->next;
+	}
+	//如果临时指针temp未指向指定结点，则查找失败
+	if (temp != node)
+		cout << "未查询到输入的结点。" << endl;
+	//建立新结点接在指定结点后
+	else
+	{
+		temp2 = temp->next;
+		temp->next = new Node;
+		temp->next->data = data;
+		temp->next->next = temp2;
+		//头结点中结点数域+1
+		++head->data;
+	}
 }
 
 //定结点删除
-void listerase(npointer node)
+void listerase(npointer head,npointer node)
 {
-
+	npointer temp;
+	npointer temp2;
+	temp = head;
+	if (temp != NULL)
+	{
+		//临时指针temp遍历指向输入结点，循环直到走到最后一个结点或者找到输入结点为止
+		for (int i = 0; i <= head->data && temp->next != node; i++)
+		{
+			temp = temp->next;
+		}
+		//释放定结点，并将链表拼接
+		temp2 = temp->next->next;
+		delete (temp->next);
+		temp->next = temp2;
+		//头结点中结点数域-1
+		head->data--;
+	}
+	else
+		cout << "链表为空,无法删除!" << endl;
 }
 
 //按值删除
-void listremove(npointer head, int num)
+void listremove(npointer head, int data,int num)
 {
-
+	npointer temp;
+	npointer temp2;
+	int temp3 = 0;
+	temp = head;
+	if (temp != NULL)
+	{
+		//临时指针temp遍历指向输入结点，循环直到走到最后一个结点或者找到输入结点为止
+		for (int i = 1; i <= head->data&&temp3!=num; i++)
+		{
+			if (temp->next->data == data)
+			{
+				temp2 = temp->next;
+				listerase(head, temp2);
+				temp3++;
+			}
+			temp = temp->next;
+		}
+		if (temp3 !=num)
+			cout << "链表中值为" << data << "的结点只有" << temp3 << "个。" << endl;
+	}
+	else
+		cout << "链表为空,无法删除!" << endl;
 }
 
-//按值查找
-/*npointer listfind(npointer head, int data)
+//按值查找 只返还符合该值的第一个结点的位置
+npointer listfind(npointer head, int data)
 {
-
-}*/
+	npointer temp;
+	temp = head->next;
+	if (temp != NULL)
+	{
+		//临时指针temp遍历指向输入结点，循环直到走到最后一个结点或者找到符合条件的结点为止
+		for (int i = 1; i <= head->data && temp->data!=data; i++)
+		{
+			if(i!=head->data)
+				temp = temp->next;
+		}
+		if (temp->data == data)
+			return temp;
+		else
+		{
+			cout << "链表无符合该值的结点!" << endl;
+			return NULL;
+		}
+	}
+	else
+	{
+		cout << "链表为空,无法查找!" << endl;
+		return NULL;
+	}
+}
 
 //按顺序打印链表
 void listprint(npointer head)
@@ -130,16 +211,40 @@ void listprint(npointer head)
 		cout << "链表为空!" << endl;
 }
 
-//将链表按升序排序
+//将链表按升序排序 冒泡交换数据域
 void listsort(npointer head)
 {
-
+	npointer temp=head->next;
+	npointer temp2=temp;
+	int temp3=0;
+	if (temp != NULL&&temp->next!=NULL)
+	{
+		for (; temp != NULL; temp = temp->next)
+			for (temp2 = temp->next; temp2 != NULL; temp2 = temp2->next)
+			{
+				if (temp->data > temp2->data)
+				{
+					temp3 = temp->data;
+					temp->data = temp2->data;
+					temp2->data = temp3;
+				}
+			}
+	}
+	else
+		cout << "链表为空!" << endl;
 }
 
 //将两个链表合并并按升序排序
 void listcombine(npointer head1, npointer head2)
 {
-
+	npointer temp = head1;
+	npointer temp2 = head2;
+	for (; temp->next != NULL; temp = temp->next);
+	temp->next = temp2->next;
+	//数据域增加
+	head1->data += head2->data;
+	delete temp2;
+	listsort(head1);
 }
 
 //查询链表内结点数，如果为空返回-1
