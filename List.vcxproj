@@ -139,11 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="circlequeue.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="single_list.cpp" />
     <ClCompile Include="stack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="circlequeue.h" />
     <ClInclude Include="single_list.h" />
     <ClInclude Include="stack.h" />
   </ItemGroup>

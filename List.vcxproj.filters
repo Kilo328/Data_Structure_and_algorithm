@@ -24,12 +24,18 @@
     <ClCompile Include="stack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="circlequeue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="single_list.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="stack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="circlequeue.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

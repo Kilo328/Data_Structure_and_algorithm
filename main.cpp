@@ -1,14 +1,21 @@
 #include<iostream>
 #include"single_list.h"
 #include"stack.h"
+#include"circlequeue.h"
 using namespace std;
+void test()
+{
+	cqueue Q = initcqueue();
+	cqueue_push(Q);
+	cqueue_push(Q);
+	cqueue_push(Q);
+	cqueue_push(Q);
+	cqueue_push(Q);
+	int x = cqueue_pop(Q);
+	cout << x;
+}
 int main()
 {
-	snpointer head = initstack();
-	stack_push(head);
-	stack_push(head);
-	stack_push(head);
-	stack_push(head);
-	sprint(head);
+	test();
 	return 0;
 }
