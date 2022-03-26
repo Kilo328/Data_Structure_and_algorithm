@@ -1,17 +1,14 @@
 #include<iostream>
 #include"single_list.h"
+#include"stack.h"
 using namespace std;
 int main()
 {
-	npointer head1 = initlist();
-	listpushback(head1);
-	listpushback(head1);
-	listpushback(head1);
-	npointer head2 = initlist();
-	listpushback(head2);
-	listpushback(head2);
-	listpushback(head2);
-	listcombine(head1,head2);
-	listprint(head1);
+	snpointer head = initstack();
+	stack_push(head);
+	stack_push(head);
+	stack_push(head);
+	stack_push(head);
+	sprint(head);
 	return 0;
 }
