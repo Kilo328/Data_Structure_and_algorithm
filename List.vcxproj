@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bintree.cpp" />
     <ClCompile Include="circlequeue.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="single_list.cpp" />
     <ClCompile Include="stack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bintree.h" />
     <ClInclude Include="circlequeue.h" />
     <ClInclude Include="single_list.h" />
     <ClInclude Include="stack.h" />

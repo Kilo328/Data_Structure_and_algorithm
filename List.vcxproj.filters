@@ -27,6 +27,9 @@
     <ClCompile Include="circlequeue.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="bintree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="single_list.h">
@@ -36,6 +39,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="circlequeue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bintree.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

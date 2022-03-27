@@ -45,15 +45,14 @@ int stack_pop(snpointer head)
 	}
 }
 //让元素入栈
-void stack_push(snpointer head)
+void stack_push(snpointer head,int pushdata)
 {
 	if (!isfull(head))
 	{
 		snpointer temp = head->next;
 		head->next = new sNode;
 		head->next->next = temp;
-		cout << "请输入入栈的元素值" << endl;
-		cin >> head->next->data;
+		head->next->data = pushdata;
 		head->data++;
 	}
 	else

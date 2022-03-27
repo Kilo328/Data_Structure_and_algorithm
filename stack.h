@@ -18,7 +18,7 @@ bool isfull(snpointer head);
 //让元素出栈
 int stack_pop(snpointer head);
 //让元素入栈
-void stack_push(snpointer head);
+void stack_push(snpointer head, int pushdata);
 //取栈顶元素
 int stack_getdata(snpointer head);
 //测试用打印
