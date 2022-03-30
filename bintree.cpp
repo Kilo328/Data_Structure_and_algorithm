@@ -137,7 +137,7 @@ tnpointer bintree_delete(tnpointer T, int tdata)
 //É¾³ı½áµã ·Çµİ¹é
 tnpointer bintree_del(tnpointer T, int tdata)
 {
-	if (!T)
+	if (T)
 	{
 		tnpointer Temp = T;
 		tnpointer Temp2 = NULL;
@@ -174,10 +174,10 @@ tnpointer bintree_del(tnpointer T, int tdata)
 					Temp2 = Temp2->right;
 				}
 				Temp->data = Temp2->data;
-				if (Temp3->left = Temp2)
-					Temp3->left = NULL;
+				if (Temp3->left == Temp2)
+					Temp3->left = Temp2->left ? Temp2->left : Temp2->right;
 				else
-					Temp3->right = NULL;
+					Temp3->right=Temp2->left ? Temp2->left : Temp2->right;
 				delete(Temp2);
 				return T;
 			}
@@ -203,8 +203,8 @@ tnpointer bintree_del(tnpointer T, int tdata)
 			}
 		}
 	}
-	else
-		return T;
+	if (!T)
+		return NULL;
 }
 //ÏÈĞò±éÀú µİ¹é
 void bintree_traverse(tnpointer T)
