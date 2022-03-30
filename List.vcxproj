@@ -24,6 +24,7 @@
     <ProjectGuid>{e405b503-d8df-4a31-92d1-a847f2301dab}</ProjectGuid>
     <RootNamespace>List</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Data_Structure_and_algorithm</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -139,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="avl.cpp" />
     <ClCompile Include="bintree.cpp" />
     <ClCompile Include="circlequeue.cpp" />
     <ClCompile Include="main.cpp" />
@@ -146,6 +148,7 @@
     <ClCompile Include="stack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="avl.h" />
     <ClInclude Include="bintree.h" />
     <ClInclude Include="circlequeue.h" />
     <ClInclude Include="single_list.h" />
