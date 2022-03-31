@@ -15,11 +15,13 @@ mhpointer minheap_insert(mhpointer MH,elementtype* node)
 {
 	if (!minheap_isfull(MH))
 	{
-		MH->p[++MH->size] = *node;
+		MH->p[++MH->size].weight=node->weight;
+		MH->p[MH->size].right = node->right;
+		MH->p[MH->size].left = node->left;
 		int parent=MH->size, son=MH->size;
+		elementtype temp;
 		for (parent=parent/2; parent> 0; son=parent,parent=parent/2)
 		{
-			elementtype temp;
 			temp.weight = MH->p[parent].weight;
 			temp.left = MH->p[parent].left;
 			temp.right = MH->p[parent].right;
@@ -47,19 +49,26 @@ elementtype* minheap_pop(mhpointer MH)
 	if (!minheap_isempty(MH))
 	{
 		int parent, son;
-		elementtype* temp = new elementtype;
-		int temp3;
+		elementtype* temp=new elementtype;
 		temp->weight= MH->p[1].weight;
 		temp->left = MH->p[1].left;
 		temp->right = MH->p[1].right;
 		//将根节点用最小堆最后一个元素代替
-		MH->p[1].weight = MH->p[MH->size--].weight;
+		MH->p[1].weight = MH->p[MH->size].weight;
+		MH->p[1].left = MH->p[MH->size].left;
+		MH->p[1].right = MH->p[MH->size].right;
+		MH->p[MH->size].left=NULL;
+		MH->p[MH->size].right=NULL;
+		MH->size--;
 		parent = son = 1;
 		//从根节点开始遍历比较，一直到最后一行
 		for (; parent * 2 <= MH->size; parent = parent * 2)
 		{
 			//定义一个temp2保存父节点
-			elementtype temp2 = MH->p[parent];
+			elementtype temp2;
+			temp2.weight = MH->p[parent].weight;
+			temp2.right = MH->p[parent].right;
+			temp2.left = MH->p[parent].left;
             son = parent * 2;
 			//将儿子指向更小的那个结点
 			if (son + 1 <= MH->size && MH->p[son].weight >MH->p[son + 1].weight)

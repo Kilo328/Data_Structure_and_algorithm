@@ -2,7 +2,7 @@
 #include<iostream>
 #define elementtype hNode
 using namespace std;
-struct hNode 
+struct hNode
 {
 	int weight;
 	hNode* left;
