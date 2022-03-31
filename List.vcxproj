@@ -144,6 +144,7 @@
     <ClCompile Include="bintree.cpp" />
     <ClCompile Include="circlequeue.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="minheap.cpp" />
     <ClCompile Include="single_list.cpp" />
     <ClCompile Include="stack.cpp" />
   </ItemGroup>
@@ -151,6 +152,7 @@
     <ClInclude Include="avl.h" />
     <ClInclude Include="bintree.h" />
     <ClInclude Include="circlequeue.h" />
+    <ClInclude Include="minheap.h" />
     <ClInclude Include="single_list.h" />
     <ClInclude Include="stack.h" />
   </ItemGroup>
