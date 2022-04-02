@@ -143,6 +143,7 @@
     <ClCompile Include="avl.cpp" />
     <ClCompile Include="bintree.cpp" />
     <ClCompile Include="circlequeue.cpp" />
+    <ClCompile Include="graph.cpp" />
     <ClCompile Include="huffmantree.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="minheap.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="avl.h" />
     <ClInclude Include="bintree.h" />
     <ClInclude Include="circlequeue.h" />
+    <ClInclude Include="graph.h" />
     <ClInclude Include="huffmantree.h" />
     <ClInclude Include="minheap.h" />
     <ClInclude Include="single_list.h" />
