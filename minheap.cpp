@@ -15,11 +15,14 @@ mhpointer minheap_insert(mhpointer MH,elementtype* node)
 {
 	if (!minheap_isfull(MH))
 	{
+		//先将结点插入堆的最后一个元素
 		MH->p[++MH->size].weight=node->weight;
 		MH->p[MH->size].right = node->right;
 		MH->p[MH->size].left = node->left;
+		//父子指针先都指向最后一个元素
 		int parent=MH->size, son=MH->size;
 		elementtype temp;
+		//循环比较，如果儿子比父亲小，则交换数据，一路交换到堆顶
 		for (parent=parent/2; parent> 0; son=parent,parent=parent/2)
 		{
 			temp.weight = MH->p[parent].weight;
